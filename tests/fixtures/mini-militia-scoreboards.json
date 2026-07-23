@@ -1,0 +1,235 @@
+[
+  {
+    "source": "Screenshot_20260719_234856_Mini Militia.jpg",
+    "rawText": "FINAL GAME SCORES\nNO GAME DATA\n• Littleboy 36 25 +11\n• Boss 35 29 +6\n• Luchifer 30 29 +1\n• Nanir vatar 30 33 -3\n• RAFAYEL 21 32 -11\n• Ninja 20 31 -11\n• Infantino 14 36 -22\nTOTAL BP: 5050\nTOTAL EXP: 0",
+    "rows": [
+      {
+        "playerName": "Littleboy",
+        "kills": 36,
+        "deaths": 25,
+        "placement": 1,
+        "scoreDifference": 11
+      },
+      {
+        "playerName": "Boss",
+        "kills": 35,
+        "deaths": 29,
+        "placement": 2,
+        "scoreDifference": 6
+      },
+      {
+        "playerName": "Luchifer",
+        "kills": 30,
+        "deaths": 29,
+        "placement": 3,
+        "scoreDifference": 1
+      },
+      {
+        "playerName": "Nanir vatar",
+        "kills": 30,
+        "deaths": 33,
+        "placement": 4,
+        "scoreDifference": -3
+      },
+      {
+        "playerName": "RAFAYEL",
+        "kills": 21,
+        "deaths": 32,
+        "placement": 5,
+        "scoreDifference": -11
+      },
+      {
+        "playerName": "Ninja",
+        "kills": 20,
+        "deaths": 31,
+        "placement": 6,
+        "scoreDifference": -11
+      },
+      {
+        "playerName": "Infantino",
+        "kills": 14,
+        "deaths": 36,
+        "placement": 7,
+        "scoreDifference": -22
+      }
+    ]
+  },
+  {
+    "source": "Screenshot_20260719_233246_Mini Militia.jpg",
+    "rawText": "FINAL GAME SCORES\nNO GAME DATA\nNinja 25 23 +2\nNanir vatar 23 25 -2\nBoss 20 26 -6\nLittleboy 16 22 -6\nLuchifer 15 19 -4\nRAFAYEL 12 28 -16",
+    "rows": [
+      {
+        "playerName": "Ninja",
+        "kills": 25,
+        "deaths": 23,
+        "placement": 1,
+        "scoreDifference": 2
+      },
+      {
+        "playerName": "Nanir vatar",
+        "kills": 23,
+        "deaths": 25,
+        "placement": 2,
+        "scoreDifference": -2
+      },
+      {
+        "playerName": "Boss",
+        "kills": 20,
+        "deaths": 26,
+        "placement": 3,
+        "scoreDifference": -6
+      },
+      {
+        "playerName": "Littleboy",
+        "kills": 16,
+        "deaths": 22,
+        "placement": 4,
+        "scoreDifference": -6
+      },
+      {
+        "playerName": "Luchifer",
+        "kills": 15,
+        "deaths": 19,
+        "placement": 5,
+        "scoreDifference": -4
+      },
+      {
+        "playerName": "RAFAYEL",
+        "kills": 12,
+        "deaths": 28,
+        "placement": 6,
+        "scoreDifference": -16
+      }
+    ]
+  },
+  {
+    "source": "Screenshot_20260719_231406_Mini Militia.jpg",
+    "rawText": "FINAL GAME SCORES\nNO GAME DATA\nNinja 26 24 +2\nNanir vatar 25 27 -2\nLuchifer 20 25 -5\nLittleboy 20 25 -5\nRAFAYEL 16 25 -9",
+    "rows": [
+      {
+        "playerName": "Ninja",
+        "kills": 26,
+        "deaths": 24,
+        "placement": 1,
+        "scoreDifference": 2
+      },
+      {
+        "playerName": "Nanir vatar",
+        "kills": 25,
+        "deaths": 27,
+        "placement": 2,
+        "scoreDifference": -2
+      },
+      {
+        "playerName": "Luchifer",
+        "kills": 20,
+        "deaths": 25,
+        "placement": 3,
+        "scoreDifference": -5
+      },
+      {
+        "playerName": "Littleboy",
+        "kills": 20,
+        "deaths": 25,
+        "placement": 4,
+        "scoreDifference": -5
+      },
+      {
+        "playerName": "RAFAYEL",
+        "kills": 16,
+        "deaths": 25,
+        "placement": 5,
+        "scoreDifference": -9
+      }
+    ]
+  },
+  {
+    "source": "Screenshot_20260716_235538_Mini Militia.jpg",
+    "rawText": "FINAL GAME SCORES\nNO GAME DATA\nNinja 27 18 +9\nLuchifer 23 25 -2\nNanir vatar 20 30 -10\nHunter 🦁 19 25 -6\nBoss 18 24 -6\nPushpa 🤫 12 22 -10",
+    "rows": [
+      {
+        "playerName": "Ninja",
+        "kills": 27,
+        "deaths": 18,
+        "placement": 1,
+        "scoreDifference": 9
+      },
+      {
+        "playerName": "Luchifer",
+        "kills": 23,
+        "deaths": 25,
+        "placement": 2,
+        "scoreDifference": -2
+      },
+      {
+        "playerName": "Nanir vatar",
+        "kills": 20,
+        "deaths": 30,
+        "placement": 3,
+        "scoreDifference": -10
+      },
+      {
+        "playerName": "Hunter 🦁",
+        "kills": 19,
+        "deaths": 25,
+        "placement": 4,
+        "scoreDifference": -6
+      },
+      {
+        "playerName": "Boss",
+        "kills": 18,
+        "deaths": 24,
+        "placement": 5,
+        "scoreDifference": -6
+      },
+      {
+        "playerName": "Pushpa 🤫",
+        "kills": 12,
+        "deaths": 22,
+        "placement": 6,
+        "scoreDifference": -10
+      }
+    ]
+  },
+  {
+    "source": "Screenshot_20260716_234052_Mini Militia.jpg",
+    "rawText": "FINAL GAME SCORES\nNO GAME DATA\nNinja 32 30 +2\nNanir vatar 28 32 -4\nBoss 25 27 -2\nLuchifer 22 27 -5\nHunter 🦁 13 30 -17",
+    "rows": [
+      {
+        "playerName": "Ninja",
+        "kills": 32,
+        "deaths": 30,
+        "placement": 1,
+        "scoreDifference": 2
+      },
+      {
+        "playerName": "Nanir vatar",
+        "kills": 28,
+        "deaths": 32,
+        "placement": 2,
+        "scoreDifference": -4
+      },
+      {
+        "playerName": "Boss",
+        "kills": 25,
+        "deaths": 27,
+        "placement": 3,
+        "scoreDifference": -2
+      },
+      {
+        "playerName": "Luchifer",
+        "kills": 22,
+        "deaths": 27,
+        "placement": 4,
+        "scoreDifference": -5
+      },
+      {
+        "playerName": "Hunter 🦁",
+        "kills": 13,
+        "deaths": 30,
+        "placement": 5,
+        "scoreDifference": -17
+      }
+    ]
+  }
+]
