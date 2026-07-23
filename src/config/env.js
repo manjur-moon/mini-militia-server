@@ -71,7 +71,9 @@ const envSchema = z
       .int()
       .positive()
       .default(10 * 1024 * 1024),
-    OCR_PROVIDER: z.enum(["google-vision", "mock", "disabled"]).default("disabled"),
+    OCR_PROVIDER: z
+  .enum(["google-vision", "tesseract", "mock", "disabled"])
+  .default("disabled"),
     GOOGLE_VISION_API_KEY: optionalNonEmptyString,
     OCR_MAX_ATTEMPTS: z.coerce.number().int().min(1).max(10).default(3),
     OCR_LOW_CONFIDENCE_THRESHOLD: z.coerce.number().min(0).max(1).default(0.75),

@@ -209,45 +209,79 @@ export function createMatchService({
     },
 
     async retryOCR({ actor, jobId, requestMeta }) {
-      const job = await OCRJobModel.findById(jobId);
-      if (!job)
-        throw new AppError({
-          statusCode: 404,
-          code: "OCR_JOB_NOT_FOUND",
-          message: "OCR job was not found.",
-        });
-      if (job.status !== "failed")
-        throw new AppError({
-          statusCode: 409,
-          code: "OCR_JOB_NOT_FAILED",
-          message: "Only failed OCR jobs can be retried.",
-        });
-      if (job.attempts >= job.maxAttempts)
-        throw new AppError({
-          statusCode: 409,
-          code: "OCR_RETRY_LIMIT_REACHED",
-          message: "The OCR retry limit has been reached.",
-        });
-      job.status = "queued";
-      job.nextRetryAt = null;
-      await job.save();
-      await AuditLogModel.create({
-        ...auditMeta(actor, requestMeta),
-        action: "match.retry_requested",
-        entityType: "ocrJob",
-        entityId: String(job._id),
-        newValue: { status: "queued", attempts: job.attempts },
-        reason: "Moderator requested OCR retry.",
-      });
-      processingService.enqueue(job._id);
-      return {
-        id: String(job._id),
-        status: job.status,
-        attempts: job.attempts,
-        maxAttempts: job.maxAttempts,
-      };
-    },
+  const job = await OCRJobModel.findById(jobId);
 
+  if (!job) {
+    throw new AppError({
+      statusCode: 404,
+      code: "OCR_JOB_NOT_FOUND",
+      message: "OCR job was not found.",
+    });
+  }
+
+  if (job.status !== "failed") {
+    throw new AppError({
+      statusCode: 409,
+      code: "OCR_JOB_NOT_FAILED",
+      message: "Only failed OCR jobs can be retried.",
+    });
+  }
+
+  if (job.attempts >= job.maxAttempts) {
+    throw new AppError({
+      statusCode: 409,
+      code: "OCR_RETRY_LIMIT_REACHED",
+      message: "The OCR retry limit has been reached.",
+    });
+  }
+
+  if (env.OCR_PROVIDER === "disabled") {
+    throw new AppError({
+      statusCode: 503,
+      code: "OCR_NOT_CONFIGURED",
+      message: "OCR is not configured on the server.",
+    });
+  }
+
+  const previousProvider = job.provider;
+
+  // নতুন .env configuration দিয়ে পুরোনো failed job update হবে।
+  job.provider = env.OCR_PROVIDER;
+  job.parserProfile = env.OCR_PARSER_PROFILE;
+  job.columnOrder = env.ocrColumnOrder;
+  job.status = "queued";
+  job.nextRetryAt = null;
+
+  await job.save();
+
+  await AuditLogModel.create({
+    ...auditMeta(actor, requestMeta),
+    action: "match.retry_requested",
+    entityType: "ocrJob",
+    entityId: String(job._id),
+    previousValue: {
+      status: "failed",
+      provider: previousProvider,
+    },
+    newValue: {
+      status: job.status,
+      provider: job.provider,
+      parserProfile: job.parserProfile,
+      attempts: job.attempts,
+    },
+    reason: "Moderator requested OCR retry.",
+  });
+
+  processingService.enqueue(job._id);
+
+  return {
+    id: String(job._id),
+    status: job.status,
+    provider: job.provider,
+    attempts: job.attempts,
+    maxAttempts: job.maxAttempts,
+  };
+},
     async saveReview({ actor, matchId, input, requestMeta }) {
       const match = await MatchModel.findById(matchId);
       if (!match) throw notFound();
