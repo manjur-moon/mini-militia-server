@@ -1,0 +1,58 @@
+{
+  "name": "@mini-militia/server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "nodemon --watch src --ext js,json --exec node src/server.js",
+    "start": "node src/server.js",
+    "test": "vitest run --pool=threads --maxWorkers=4",
+    "test:watch": "vitest",
+    "admin:bootstrap": "node src/scripts/create-initial-admin.js",
+    "achievements:migrate-indexes": "node src/scripts/migrate-achievement-indexes.js",
+    "rivalries:migrate-indexes": "node src/scripts/migrate-rivalry-indexes.js",
+    "challenges:migrate-indexes": "node src/scripts/migrate-challenge-indexes.js",
+    "hall-of-fame:migrate-indexes": "node src/scripts/migrate-hall-of-fame-indexes.js",
+    "seasons:migrate-indexes": "node src/scripts/migrate-season-indexes.js",
+    "notifications:migrate-indexes": "node src/scripts/migrate-notification-indexes.js",
+    "ai:migrate-indexes": "node src/scripts/migrate-ai-summary-indexes.js",
+    "test:coverage": "vitest run --coverage --pool=threads --maxWorkers=4",
+    "test:critical": "vitest run tests/auth.integration.test.js tests/security.integration.test.js tests/rbac-permission-matrix.test.js tests/critical-validation-hardening.test.js tests/match-verification.workflow.test.js tests/statistics.service.test.js tests/mvp-leaderboard.qa.test.js tests/ocr-result-parser.test.js --pool=threads --maxWorkers=4",
+    "test:database:memory": "RUN_MONGODB_MEMORY_TESTS=true vitest run tests/mongodb-memory-critical.integration.test.js --pool=forks --maxWorkers=1",
+    "seed:defaults": "node src/scripts/seed-production-defaults.js",
+    "deploy:preflight": "node src/scripts/production-preflight.js"
+  },
+  "dependencies": {
+    "@better-auth/mongo-adapter": "^1.6.23",
+    "@mini-militia/shared": "*",
+    "better-auth": "^1.6.23",
+    "cloudinary": "^2.10.0",
+    "compression": "^1.8.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.6.0",
+    "helmet": "^8.3.0",
+    "luxon": "^3.7.2",
+    "mongodb": "^7.0.0",
+    "mongoose": "^9.7.4",
+    "morgan": "^1.11.0",
+    "multer": "^2.2.0",
+    "openai": "^6.48.0",
+    "sharp": "^0.35.3",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@vitest/coverage-v8": "^4.1.10",
+    "mongodb-memory-server": "^11.2.0",
+    "nodemon": "^3.1.14",
+    "supertest": "^7.2.2",
+    "vitest": "^4.1.10"
+  }
+}
